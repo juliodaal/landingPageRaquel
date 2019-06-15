@@ -5,6 +5,7 @@
 @import 'libs/breakpoints';
 @import 'libs/html-grid';
 @import 'font-awesome.min.css';
+@import url('https://fonts.googleapis.com/css?family=Finger+Paint&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic');
 
 /*
@@ -93,7 +94,6 @@
 		-ms-appearance: none;
 		appearance: none;
 	}
-
 /* Basic */
 
 	@-ms-viewport {
@@ -1302,9 +1302,13 @@
 			}
 
 	}
-
-	.wrapper {
+	.wrapper{
 		@include padding(6em, 0);
+	}
+	.wrapper-special{
+		@include padding(3em, 0);
+	}
+	.wrapper, .wrapper-special {
 
 		> .inner {
 			width: 60em;
@@ -1475,6 +1479,7 @@
 			line-height: inherit;
 			position: absolute;
 			top: 0;
+			font-family: 'Finger Paint', cursive;
 
 			a {
 				border: 0;
@@ -1484,6 +1489,9 @@
 
 				@include breakpoint('<=small') {
 					font-size: 0.8em;
+				}
+				span{
+					color: #00ffcc;
 				}
 			}
 		}
@@ -1572,7 +1580,6 @@
 		overflow: hidden;
 		position: relative;
 		text-align: center;
-
 		h2 {
 			@include vendor('transform', 'scale(1)');
 			@include vendor('transition', ('transform 0.5s ease', 'opacity 0.5s ease'));
@@ -1582,7 +1589,7 @@
 			padding: 0.35em 1em;
 			position: relative;
 			z-index: 1;
-
+			font-family: 'Finger Paint', cursive;
 			&:before, &:after {
 				@include vendor('transition', 'width 0.85s ease');
 				@include vendor('transition-delay', '0.25s');
@@ -1608,7 +1615,10 @@
 		p {
 			letter-spacing: _size(letter-spacing-alt);
 			text-transform: uppercase;
-
+			font-family: 'Finger Paint', cursive;
+			font-size: 3rem;
+			margin-bottom: 40px;
+			color: #00ffcc;
 			a {
 				color: inherit;
 			}
@@ -1713,7 +1723,6 @@
 		.inner {
 			@include vendor('display', 'flex');
 			max-width: 45em;
-
 			header {
 				@include vendor('order', '1');
 				padding-right: 3em;
@@ -1757,9 +1766,9 @@
 /* Main */
 
 	#main {
-		> header {
+		> header, .headerProductosYServicios {
 			@include padding(12em, 0);
-			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/box.png")'));
+			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/bg.jpg")'));
 			background-attachment: fixed;
 			background-position: center center;
 			background-repeat: no-repeat;
@@ -1804,7 +1813,6 @@
 			}
 		}
 	}
-
 	body.is-mobile {
 		#main {
 			> header {
@@ -1884,7 +1892,7 @@
 
 	body.landing {
 		#page-wrapper {
-			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/box.png")'));
+			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/bg.jpg")'));
 			background-attachment: fixed;
 			background-position: center center;
 			background-repeat: no-repeat;
